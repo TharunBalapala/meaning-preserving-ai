@@ -61,11 +61,12 @@ Enhanced text
 
 Then apply a validation threshold:
 
-Similarity Score	Action
+### Similarity Score	Action
+```
 ≥ 0.92	✅ Accept
 0.85 – 0.92	⚠ Flag
 < 0.85	❌ Reject & Retry
-
+```
 This ensures no semantic drift.
 
 ### 3️⃣ Transparent Change Log
