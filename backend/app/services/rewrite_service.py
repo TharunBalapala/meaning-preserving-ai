@@ -1,9 +1,5 @@
-import google.generativeai as genai
+from langchain_google_genai import ChatGoogleGenerativeAI
 import os
-
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-
-model = genai.GenerativeModel("gemini-1.5-flash")
 
 STRICT_PROMPT = """
 You are a professional academic editor.
@@ -34,7 +30,17 @@ Rewrite again strictly:
 Return ONLY the corrected version.
 """
 
-def rewrite_text(text: str, stricter: bool = False) -> str:
-    prompt = STRICTER_PROMPT if stricter else STRICT_PROMPT
-    response = model.generate_content(f"{prompt}\n\nOriginal Text:\n{text}")
-    return response.text.strip()
+def rewrite_text(text: str) -> str:
+    llm = ChatGoogleGenerativeAI(
+        model="models/gemini-1.5-flash",
+        google_api_key=os.getenv("GOOGLE_API_KEY")
+    )
+
+    prompt = f"""{STRICT_PROMPT}
+
+Text:
+{text}
+"""
+
+    response = llm.invoke(prompt)
+    return response.content

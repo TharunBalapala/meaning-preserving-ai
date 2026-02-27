@@ -1,4 +1,13 @@
-from typing import Optional
+from pydantic import BaseModel
+from typing import List, Optional
+
+
+class ChangeItem(BaseModel):
+    original: str
+    enhanced: str
+    change_type: str
+    reason: str
+
 
 class EnhanceResponse(BaseModel):
     original_text: str
