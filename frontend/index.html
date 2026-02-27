@@ -1,13 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Meaning Preserving AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Meaning Preserving AI</h1>
+        <p>Rewrite text without changing its meaning</p>
+    </header>
+
+    <div id="chat-box" class="chat-box"></div>
+
+    <div class="input-area">
+        <textarea id="user-input" placeholder="Type your text here..."></textarea>
+        <button onclick="sendMessage()">Rewrite</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
 </html>

@@ -7,11 +7,11 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-from utils.similarity import semantic_similarity
-from utils.changelog import generate_changelog
-from backend.utils.llm_classifier import improve_text
 from backend.utils.similarity import semantic_similarity
+from backend.utils.llm_classifier import improve_text
 from backend.utils.changelog import generate_changelog
+# from utils.similarity import semantic_similarity
+# from utils.changelog import generate_changelog
 load_dotenv()
 
 app = FastAPI()
@@ -44,3 +44,12 @@ def enhance_text(request: TextRequest):
         "similarity": similarity,
         "changes": changes
     }
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
