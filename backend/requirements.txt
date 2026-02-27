@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+numpy
+scikit-learn
+google-generativeai
+langchain-google-genai
+python-dotenv
+sentence-transformers
