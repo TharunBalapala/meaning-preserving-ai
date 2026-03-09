@@ -2,6 +2,13 @@
 
 AI-powered text enhancement that fixes grammar and clarity while preserving meaning.
 
+
+## Live Demo
+- Frontend: https://text-enhancer-11uc.onrender.com
+- Backend API: https://meaningpreservingtextenhancer.onrender.com/
+- Deployed via Render (Static Site for frontend, Web Service for backend).
+
+
 ## Tech Stack
 - Backend
   - Node.js 18+, Express 5
